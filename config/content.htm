@@ -1,16 +1,19 @@
 <h1>About</h1>
 <p><a href="https://github.com/mdecad2022/site-chiiip333">mdecad2022/site-chiiip333: site-chiiip333</a></p>
 <h1>HW</h1>
-<h2>W10</h2>
-<h2>W11</h2>
+<h2>w10</h2>
+<h2>w11</h2>
 <p>1.請問 w11 週小考有幾人缺考?</p>
 <p>2.請問 w11 週小考平均分數多少?</p>
-<p><button id="add1to100">1 add to 100</button><button id="w11缺考名單">w11缺考名單</button><button id="w11平均分數">w11平均分數</button></p>
-<p>將 iterable 與 iterator <a href="https://home.gamer.com.tw/creationDetail.php?sn=4337438">相關說明</a>, 利用 Brython 與 Ace Editor 整理在這個頁面.</p>
-<p><!-- 導入 brython 程式庫 -->
+<p><button id="w11">w11缺考名單</button></p>
+<p></p>
+<!-- 導入 brython 程式庫 -->
+<p>
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
+</p>
 <!-- 啟動 Brython -->
+<p>
 <script>
 window.onload=function(){
 brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
@@ -54,7 +57,7 @@ def run1():
     try:
         url = doc.query["src"]
     except:
-        url = "https://gist.githubusercontent.com/mdecourse/0229a8a017091476a79700b8a190f185/raw/c3a6deaf717f8f2739a4b1392a5ab10936e9693a/from_1_add_to_10_1.py"
+        url = "https://gist.githubusercontent.com/chiiip333/7c855cab3c70d44b2c1e4775e72c28b6/raw/6de0828d9a762d7039018b289bd5c6af74e33cb7/w11%25E7%25BC%25BA%25E8%2580%2583%25E5%2590%258D%25E5%2596%25AE"
     prog = open(url).read()
 
     # 將程式載入編輯區
@@ -89,7 +92,7 @@ def clear_bd1(ev):
 # 利用 ace 中的 Editor 建立 Ace 物件, 其中的輸入變數分別對應到頁面中的編輯區物件
 Ace2 = ace.Editor(editor_id="kw_editor1", console_id="kw_console1", container_id="kw__container1", storage_id="kw_py_src1" )
 
-add1to100_url = "https://gist.githubusercontent.com/mdecourse/0229a8a017091476a79700b8a190f185/raw/c48e37714f055c3a0027cbfef59e442a6ef659b9/from_1_add_to_100_1.py"
+add1to100_url = "https://gist.githubusercontent.com/41023226/e73fe5a797fec1c3e3177be4567d9996/raw/934f8e356b9610f5db646f12510318821d90adb1/w11"
 
 # 從 gist 取得程式碼
 add_src = open(add1to100_url).read()
@@ -103,7 +106,7 @@ doc["add1to100"].bind('click', add)
 </script>
 </p>
 <p><!-- add 1 to 100 結束--></p>
-<p><!-- editor1 開始 --></p>
+<!-- editor1 開始 -->
 <p><!-- 用來顯示程式碼的 editor 區域 --></p>
 <div id="kw_editor1" style="width: 600px; height: 300px;"></div>
 <p><!-- 以下的表單與按鈕與前面的 Javascript doSave 函式以及 FileSaver.min.js 互相配合 --></p>
@@ -118,11 +121,7 @@ doc["add1to100"].bind('click', add)
 <p><!-- 程式執行 ouput 區 --></p>
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console1"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div 作為切入位置 --></p>
-<div id="brython_div1"></div>
-<p><!-- editor1 結束 --></p>
-<hr/>
-<p>查驗輸入字串程式:</p>
-<p><button id="check_input">查驗輸入字串</button></p>
+<p></p>
 <p><!-- 判斷輸入字串是否aA1$, 且至少 8 個字元-開始 -->
 <script type="text/python3">
 from browser import document as doc
@@ -159,30 +158,22 @@ run1()
 </script>
 </p>
 <p><!-- 判斷輸入字串是否aA1$, 且至少 8 個字元-結束--></p>
-<p><!-- editor2 開始 --></p>
+<!-- editor2 開始 -->
 <p><!-- 用來顯示程式碼的 editor 區域 --></p>
-<div id="kw_editor2" style="width: 600px; height: 300px;"></div>
-<p><!-- 以下的表單與按鈕與前面的 Javascript doSave 函式以及 FileSaver.min.js 互相配合 --></p>
-<p><!-- 存擋表單開始 --></p>
-<form><label>Filename: <input id="kw_filename2" placeholder="input file name" type="text"/>.py</label> <input onclick="doSave('kw_py_src2', 'kw_filename2');" type="submit" value="Save"/></form>
-<p><!-- 存擋表單結束 --></p>
 <p></p>
-<p><!-- 執行與清除按鈕開始 --></p>
-<p><button id="kw_run2">Run</button> <button id="kw_show_console2">Output</button> <button id="kw_clear_console2">清除輸出區</button><button id="clear_bd2">清除繪圖區</button><button onclick="window.location.reload()">Reload</button></p>
 <p><!-- 執行與清除按鈕結束 --></p>
 <p></p>
-<p><!-- 程式執行 ouput 區 --></p>
-<div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console2"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div 作為切入位置 --></p>
-<div id="brython_div2"></div>
-<p><!-- editor2 結束 --></p>
+<h2 id="brython_div2">w12</h2>
+<!-- editor2 結束 -->
 <p><!-- 導入 gearUtils-0.9.js Cango 齒輪繪圖程式庫 -->
 <script src="/static/Cango-24v03-min.js"></script>
 <script src="/static/gearUtils-09.js"></script>
 <script src="/static/SVGpathUtils-6v03-min.js"></script>
 <script src="/static/sylvester.js"></script>
 <script src="/static/PrairieDraw.js"></script>
-</p><h1>w6</h1>
+</p>
+<h1>w6</h1>
 <p>cmsite</p>
 <h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
